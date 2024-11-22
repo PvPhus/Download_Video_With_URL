@@ -1,0 +1,46 @@
+﻿<section id="download" class="download-area">
+    <div class="container">
+        <h1 class="title">Tải video TikTok, YouTube nhanh chóng</h1>
+        <p class="description">
+            Dán liên kết video của bạn và nhấn "Tải xuống" để bắt đầu.
+        </p>
+
+        <!-- Form nhập liên kết -->
+        <div class="form-wrapper">
+            <form method="post" action="/Video/ProcessVideo">
+                <input type="url"
+                       id="video-url"
+                       name="videoUrl"
+                       class="input-url"
+                       placeholder="Nhập liên kết video TikTok, YouTube hoặc Instagram..."
+                       required />
+                <button type="submit" id="preview-button" class="btn-download">Tải xuống</button>
+            </form>
+        </div>
+
+        <!-- Kết quả tải xuống -->
+        @if (ViewBag.PreviewUrl != null)
+        {
+            <div id="preview-section" class="preview-section">
+                <h3 class="preview-title">Kết quả tải xuống</h3>
+
+                <!-- Video -->
+                <div id="preview-content" class="preview-content">
+                    <video width="600" controls>
+                        <source src="@ViewBag.PreviewUrl" type="video/mp4">
+                        Trình duyệt không hỗ trợ video.
+                    </video>
+                </div>
+
+                <!-- Nút tải xuống -->
+                <div id="download-options" class="download-options">
+                    <p><a href="@ViewBag.DownloadLink" download class="btn-download">Tải video xuống</a></p>
+                </div>
+            </div>
+        }
+        else if (ViewBag.Message != null)
+        {
+            <p style="color: red;">@ViewBag.Message</p>
+        }
+    </div>
+</section>
