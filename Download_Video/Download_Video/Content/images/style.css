@@ -1,0 +1,303 @@
+/* Reset CSS */
+body, h1, h2, h3, p, ul, li, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+}
+
+/* header */
+.header {
+    background-color: #0056d6;
+    color: white;
+    padding: 10px 20px;
+}
+
+.container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav ul li {
+    margin: 0 10px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+section {
+    padding: 40px 20px;
+    background: #fff;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tổng thể */
+.download-area {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 50px auto;
+}
+  
+.download-area .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    justify-content: center;
+}
+  
+.download-area .description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Tiêu đề và mô tả */
+/*.title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Form */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.input-url {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-download {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+    background-color: #45a049;
+}
+
+/* Kết quả tải xuống */
+.preview-section {
+    margin-top: 30px;
+    text-align: left;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.preview-title {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.preview-content iframe,
+.preview-content video {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Chọn chất lượng */
+.quality-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.select-quality {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Danh sách tải xuống */
+.download-options {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.download-options button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.download-options button:hover {
+    background-color: #45a049;
+}
+
+/*footer*/
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer_area {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffcc00;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-links li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links li i {
+    font-size: 1.2rem;
+    color: #ffcc00;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+/* Căn chỉnh danh sách social-links */
+.social-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Căn giữa ngang */
+    align-items: center; /* Căn giữa dọc nếu cần */
+    gap: 15px; /* Khoảng cách giữa các mục */
+}
+
+/* Định dạng từng mục liên kết */
+.social-links li {
+    display: inline-block;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+    display: flex; /* Flex để căn giữa icon và text */
+    align-items: center; /* Căn giữa icon và text theo chiều dọc */
+    gap: 8px; /* Khoảng cách giữa icon và text */
+}
+
+.social-links a:hover {
+    color: #007BFF; /* Màu sắc khi hover */
+}
+
+/* Định dạng biểu tượng */
+.social-links i {
+    font-size: 18px;
+}

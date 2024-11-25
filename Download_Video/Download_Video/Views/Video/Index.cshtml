@@ -19,7 +19,7 @@
         </div>
 
         <!-- Kết quả tải xuống -->
-        @if (ViewBag.PreviewUrl != null)
+        @if (ViewBag.LinkPreview != null)
         {
             <div id="preview-section" class="preview-section">
                 <h3 class="preview-title">Kết quả tải xuống</h3>
@@ -27,14 +27,14 @@
                 <!-- Video -->
                 <div id="preview-content" class="preview-content">
                     <video width="600" controls>
-                        <source src="@ViewBag.PreviewUrl" type="video/mp4">
+                        <source src="@ViewBag.LinkPreview" type="video/mp4">
                         Trình duyệt không hỗ trợ video.
                     </video>
                 </div>
 
                 <!-- Nút tải xuống -->
                 <div id="download-options" class="download-options">
-                    <p><a href="@ViewBag.DownloadLink" download class="btn-download">Tải video xuống</a></p>
+                    <p><a href="@ViewBag.LinkDownload" download class="btn-download">Tải video xuống</a></p>
                 </div>
             </div>
         }

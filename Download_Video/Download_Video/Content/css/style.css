@@ -19,13 +19,13 @@ body {
   text-align: center;
 }
 
-  .header_area .logo h1 {
-    font-size: 2.5rem;
-  }
+.header_area .logo h1 {
+  font-size: 2.5rem;
+}
 
-  .header_area .logo span {
-    color: #ffcc00;
-  }
+.header_area .logo span {
+  color: #ffcc00;
+}
 
 section {
   padding: 40px 20px;
@@ -76,7 +76,7 @@ body {
 }
 
 .input-url {
-  width: 70%;
+  width: auto;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ddd;
@@ -85,6 +85,7 @@ body {
 }
 
 .btn-download {
+  width:auto;
   padding: 10px 20px;
   font-size: 16px;
   background-color: #4CAF50;
@@ -95,9 +96,9 @@ body {
   transition: background-color 0.3s;
 }
 
-  .btn-download:hover {
-    background-color: #45a049;
-  }
+.btn-download:hover {
+  background-color: #45a049;
+}
 
 /* Kết quả tải xuống */
 .preview-section {
@@ -147,20 +148,20 @@ body {
   gap: 10px;
 }
 
-  .download-options button {
-    padding: 10px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-  }
+.download-options button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
 
-    .download-options button:hover {
-      background-color: #45a049;
-    }
+.download-options button:hover {
+  background-color: #45a049;
+}
 
 /*footer*/
 .footer {
@@ -189,35 +190,35 @@ body {
   min-width: 200px;
 }
 
-  .footer-section h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #ffcc00;
-  }
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
 
-  .footer-section p, .footer-section ul {
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
+.footer-section p, .footer-section ul {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
 
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
 
-    .footer-section ul li {
-      margin-bottom: 10px;
-    }
+.footer-section ul li {
+  margin-bottom: 10px;
+}
 
-      .footer-section ul li a {
-        text-decoration: none;
-        color: #fff;
-        transition: color 0.3s;
-      }
+.footer-section ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
 
-        .footer-section ul li a:hover {
-          color: #ffcc00;
-        }
+.footer-section ul li a:hover {
+  color: #ffcc00;
+}
 
 .social-links {
   display: flex;
@@ -225,16 +226,16 @@ body {
   gap: 10px;
 }
 
-  .social-links li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+.social-links li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    .social-links li i {
-      font-size: 1.2rem;
-      color: #ffcc00;
-    }
+.social-links li i {
+  font-size: 1.2rem;
+  color: #ffcc00;
+}
 
 .footer-bottom {
   text-align: center;
@@ -254,26 +255,26 @@ body {
   gap: 15px; /* Khoảng cách giữa các mục */
 }
 
-  /* Định dạng từng mục liên kết */
-  .social-links li {
-    display: inline-block;
-  }
+/* Định dạng từng mục liên kết */
+.social-links li {
+  display: inline-block;
+}
 
-  .social-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    transition: color 0.3s;
-    display: flex; /* Flex để căn giữa icon và text */
-    align-items: center; /* Căn giữa icon và text theo chiều dọc */
-    gap: 8px; /* Khoảng cách giữa icon và text */
-  }
+.social-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: color 0.3s;
+  display: flex; /* Flex để căn giữa icon và text */
+  align-items: center; /* Căn giữa icon và text theo chiều dọc */
+  gap: 8px; /* Khoảng cách giữa icon và text */
+}
 
-    .social-links a:hover {
-      color: #007BFF; /* Màu sắc khi hover */
-    }
+.social-links a:hover {
+  color: #007BFF; /* Màu sắc khi hover */
+}
 
-  /* Định dạng biểu tượng */
-  .social-links i {
-    font-size: 18px;
-  }
+/* Định dạng biểu tượng */
+.social-links i {
+  font-size: 18px;
+}

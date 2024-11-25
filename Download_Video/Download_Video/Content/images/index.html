@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href = "assets/img/logo1.png"type = "image/x-icon">
+    <title>Dropvid-Biến mọi link thành video của bạn</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+          <img src="" alt="">
+          <div class="logo">
+              <h1>Dropvid</h1>
+              <p>Tải xuống video từ TikTok, YouTube, và nhiều nền tảng khác!</p>
+          </div>
+          <nav class="nav">
+              <ul>
+                  <li><a href="#">hagsdvas</a></li>
+                  <li><a href="#">ádqwdqwd</a></li>
+                  <li><a href="#">qưqwdwqdwq</a></li>
+              </ul>
+          </nav>
+      </div>
+    </header>
+
+    <!-- Tải video -->
+    <section id="download" class="download-area">
+      <div class="container">
+        <h1 class="title">Tải video TikTok, YouTube nhanh chóng</h1>
+        <p class="description">
+          Dán liên kết video của bạn và nhấn "Tải xuống" để bắt đầu.
+        </p>
+      </div>
+        <!-- Form nhập liên kết -->
+        <div class="form-wrapper">
+          <input
+            type="url"
+            id="video-url"
+            class="input-url"
+            placeholder="Nhập liên kết video TikTok, YouTube hoặc Instagram..."
+            required
+          />
+          <button id="preview-button" class="btn-download">Tải xuống</button>
+        </div>
+
+        <!-- Kết quả tải xuống -->
+        <div id="preview-section" class="preview-section" style="display: none">
+          <h3 class="preview-title">Kết quả tải xuống</h3>
+
+          <!-- Video hoặc thông báo -->
+          <div id="preview-content" class="preview-content">
+            <!-- Nội dung sẽ được thêm bởi JavaScript -->
+          </div>
+
+          <!-- Chọn chất lượng tải -->
+          <div id="quality-options" class="quality-options">
+            <label for="video-quality">Chọn chất lượng:</label>
+            <select id="video-quality" class="select-quality">
+              <!-- Các tùy chọn sẽ được thêm bởi JavaScript -->
+            </select>
+          </div>
+
+          <!-- Nút tải xuống -->
+          <ul id="download-options" class="download-options">
+            <!-- Các nút sẽ được thêm bởi JavaScript -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Giới thiệu -->
+    <section id="about" class="about_area">
+      <div class="wrapper">
+        <h2>Giới thiệu</h2>
+        <p>
+          Dropvid là công cụ trực tuyến giúp bạn tải xuống video từ
+          TikTok, YouTube, Facebook, và nhiều nền tảng khác. Chỉ cần sao chép
+          liên kết video, công cụ sẽ xử lý để bạn có thể tải về với chất lượng
+          mong muốn.
+        </p>
+      </div>
+    </section>
+
+    <!-- Chính sách bảo mật -->
+    <section id="privacy" class="privacy_area">
+      <div class="wrapper">
+        <h2>Chính sách bảo mật</h2>
+        <p>
+          Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn và không lưu trữ
+          bất kỳ dữ liệu video hoặc liên kết nào mà bạn nhập vào hệ thống. Toàn
+          bộ quá trình xử lý diễn ra trong thời gian thực.
+        </p>
+      </div>
+    </section>
+
+    <!-- Hướng dẫn sử dụng -->
+    <section id="guide" class="guide_area">
+      <div class="wrapper">
+        <h2>Hướng dẫn sử dụng</h2>
+        <ol>
+          <li>
+            Sao chép liên kết video từ TikTok, YouTube hoặc nền tảng bạn muốn.
+          </li>
+          <li>Dán liên kết vào ô nhập liệu bên trên.</li>
+          <li>
+            Nhấn "Hiển thị xem trước" để xem video demo và chọn chất lượng tải
+            xuống.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer_area">
+      <div class="wrapper footer">
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h3>Về chúng tôi</h3>
+            <p>
+              Dropvid là công cụ miễn phí giúp bạn tải video từ TikTok,
+              YouTube, và nhiều nền tảng khác với chất lượng cao nhất.
+            </p>
+          </div>
+          <div class="footer-section links">
+            <h3>Liên kết nhanh</h3>
+            <ul>
+              <li><a href="#about">Giới thiệu</a></li>
+              <li><a href="#privacy">Chính sách bảo mật</a></li>
+              <li><a href="#guide">Hướng dẫn sử dụng</a></li>
+              <li><a href="#download">Tải video</a></li>
+            </ul>
+          </div>
+          <div class="footer-section social">
+            <h3>Kết nối với chúng tôi</h3>
+            <ul class="social-links">
+              <li>
+                <a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-instagram"></i> Instagram</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-envelope"></i> Email</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Dropvid | All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

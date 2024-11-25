@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace VideoDownloader.Controllers
@@ -25,7 +26,7 @@ namespace VideoDownloader.Controllers
 
             try
             {
-                // Sử dụng yt-dlp để lấy liên kết tải trực tiếp hoặc tải xuống
+                // Sử dụng yt-dlp để tải video
                 string outputPath = GenerateDownload(videoUrl);
 
                 if (string.IsNullOrEmpty(outputPath))
@@ -34,9 +35,10 @@ namespace VideoDownloader.Controllers
                     return View("Index");
                 }
 
-                // Trả về thông tin cho người dùng
-                ViewBag.PreviewUrl = outputPath;
-                ViewBag.DownloadLink = outputPath; // Đường dẫn tải xuống
+                // Trả về thông tin đường dẫn tải xuống
+                ViewBag.LinkPreview = Url.Content(outputPath); // URL để xem trước
+                ViewBag.LinkDownload = Url.Content(outputPath); // URL để tải xuống
+                ViewBag.Message = "Tải video thành công!";
             }
             catch (Exception ex)
             {
@@ -46,10 +48,37 @@ namespace VideoDownloader.Controllers
             return View("Index");
         }
 
+        // Hàm xóa video sau khoảng thời gian (xx giây)
+        private void ScheduleFileDeletion(string filePath, int delayInSeconds)
+        {
+            Task.Run(async () =>
+            {
+                await Task.Delay(TimeSpan.FromSeconds(delayInSeconds));
+                try
+                {
+                    if (System.IO.File.Exists(filePath))
+                    {
+                        System.IO.File.Delete(filePath); // Xóa file
+                        Debug.WriteLine($"File đã được xóa: {filePath}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Không thể xóa file: {ex.Message}");
+                }
+            });
+        }
+
         // Hàm xử lý tải video bằng yt-dlp
         private string GenerateDownload(string videoUrl)
         {
             string ytdlpPath = @"D:\Get_Url_Download_Short_Video\Download_Video\Download_Video\yt-dlp.exe";
+
+            // Kiểm tra yt-dlp.exe có tồn tại không
+            if (!System.IO.File.Exists(ytdlpPath))
+            {
+                throw new FileNotFoundException("Không tìm thấy yt-dlp.exe tại đường dẫn: " + ytdlpPath);
+            }
 
             string outputDirectory = Server.MapPath("~/Downloads/");
             if (!Directory.Exists(outputDirectory))
@@ -57,16 +86,18 @@ namespace VideoDownloader.Controllers
                 Directory.CreateDirectory(outputDirectory);
             }
 
-            string outputFile = $"{outputDirectory}\\%(title)s.%(ext)s";
+            // Đảm bảo đường dẫn không chứa ký tự không hợp lệ
+            string outputFile = Path.Combine(outputDirectory, "%(title)s.%(ext)s");
 
+            // Cấu hình tham số yt-dlp
             string arguments = $"\"{videoUrl}\" -o \"{outputFile}\" " +
                                "--merge-output-format mp4 " +
                                "--format bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4 " +
                                "--no-playlist " +
+                               "--restrict-filenames " + // Xử lý tên tệp an toàn
                                "--retries infinite " +
                                "--no-part " +
-                               "--quiet --no-warnings " +
-                               "--progress ";
+                               "--quiet --no-warnings";
 
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
@@ -84,10 +115,17 @@ namespace VideoDownloader.Controllers
 
                 if (process.ExitCode == 0)
                 {
-                    var downloadedFile = Directory.GetFiles(outputDirectory, "*.mp4");
-                    if (downloadedFile.Length > 0)
+                    // Tìm file tải xuống
+                    var downloadedFiles = Directory.GetFiles(outputDirectory, "*.mp4");
+                    if (downloadedFiles.Length > 0)
                     {
-                        return "/Downloads/" + Path.GetFileName(downloadedFile[0]);
+                        string downloadedFile = downloadedFiles[0];
+
+                        // Lên lịch xóa file sau 30 giây
+                        ScheduleFileDeletion(downloadedFile, 30);
+
+                        // Trả về đường dẫn URL tương đối
+                        return "~/Downloads/" + Path.GetFileName(downloadedFile);
                     }
                     else
                     {
@@ -103,5 +141,3 @@ namespace VideoDownloader.Controllers
         }
     }
 }
-
-
